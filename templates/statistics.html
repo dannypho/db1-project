@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>Arlington Organic Market</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <h1>Arlington Organic Market Statistics</h1>
+        <table style="display: inline-block;">
+            <caption>Top Selling Items</caption>
+            <tr bgcolor="grey">
+                <th>Item Name</th>
+                <th>Total Revenue</th>
+            </tr>
+            {% for item in top_items %}
+                <tr bgcolor="lightgrey">
+                    <td> {{ item.Iname }} </td>
+                    <td> {{ item.TotalRevenue }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <table style="display: inline-block;">
+            <caption>Top Sold Items</caption>
+            <tr bgcolor="grey">
+                <th>Item Name</th>
+                <th>Total Quantity Sold</th>
+            </tr>
+            {% for item in top_units %}
+                <tr bgcolor="lightgrey">
+                    <td> {{ item.Iname }} </td>
+                    <td> {{ item.TotalQuantitySold }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <table style="display: inline-block;">
+            <caption>Most Loyal Customer</caption>
+            <tr bgcolor="grey">
+                <th>Name</th>
+                <th>LoyaltyScore</th>
+            </tr>
+            {% for person in top_customer %}
+                <tr bgcolor="lightgrey">
+                    <td> {{ person.Cname }} </td>
+                    <td> {{ person.LoyaltyScore }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <table style="display: inline-block;">
+            <caption>Top Customers</caption>
+            <tr bgcolor="grey">
+                <th>Name</th>
+                <th>LoyaltyScore</th>
+            </tr>
+            {% for person in top_customers %}
+                <tr bgcolor="lightgrey">
+                    <td> {{ person.Cname }} </td>
+                    <td> {{ person.LoyaltyScore }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <table style="display: inline-block;">
+            <caption>Total Revenue Generated</caption>
+            <tr bgcolor="grey">
+                <th>OverallRevenue</th>
+            </tr>
+            <td bgcolor="lightgrey">{{ total_revenue[0]['OverallRevenue'] }}</td>
+        </table>
+        <a href="/" class="bottom-link">Back</a>
+    </body>
+</html>

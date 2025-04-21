@@ -1,0 +1,14 @@
+<table>
+    <tr bgcolor="grey">
+        <th>Item </th>
+        <th>Price</th>
+        <th>Amount</th>
+    </tr>
+    {% for item, Scount in zip(items, Scounts)%}
+        <tr bgcolor="lightgrey">
+            <td>{{ item.Iname }}</td>
+            <td>${{ item.Sprice }}</td>
+            <td>{{ Scount.Scount }}</td>
+        </tr>
+    {% endfor %}
+</table>

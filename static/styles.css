@@ -1,0 +1,7 @@
+.bottom-link {
+    position: fixed;
+    bottom: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+

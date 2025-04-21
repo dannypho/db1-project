@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>Arlington Organic Market</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <h1>Arlington Organic Market</h1>
+
+        <form action="/add-vendor" method="POST">
+            <input type="text" placeholder="Vendor Name" name="vendorName" required>
+            <input type="number" placeholder="Vendor ID" name="vendorID" required>
+            <input type="text" placeholder="Vendor Street" name="vendorStreet" required>
+            <input type="text" placeholder="Vendor City" name="vendorCity" required>
+            <input type="text" placeholder="Vendor StateAb" name="vendorStateAb" required>
+            <input type="number" placeholder="Vendor Zip Code" name="vendorZipCode" required>
+
+            <button type="submit">Insert Vendor</button>
+        </form>
+
+        <form action="/add-item" method="POST">
+            <input type="text" placeholder="Item Vendor" name="itemVendor" required>
+            <input type="text" placeholder="Item Name" name="itemName" required>
+            <input type="number" placeholder="Item ID" name="itemID" required>
+            <input type="text" placeholder="Item Price" name="itemPrice" required>
+            <input type="text" placeholder="Item Category" name="itemCategory" required>
+            <input type="number" placeholder="Item Amount" name="itemAmount" required>
+
+            <button type="submit">Insert Item</button>
+        </form>
+
+        <form action="/update-item" method="POST">
+            <input type="text" placeholder="Item Name" name="updatedItemName" required>
+            <input type="text" placeholder="Updated Price" name="updatedItemPrice" required>
+
+            <button type="submit">Update Item</button>
+        </form>
+
+        <form action="/delete-item" method="POST">
+            <input type="text" placeholder="Item Name" name="deletedItemName" required>
+
+            <button type="submit">Delete Item</button>
+        </form>
+
+        <form action="/view-inventory" method="GET">
+            <button type="submit">View Inventory</button>
+        </form>
+
+        {% if items and Scounts %}
+            {% include "items.html" %}
+        {% endif %}
+
+        {% if success %}
+            <div style="background-color: #d4edda; color: #155724; padding: 10px; border-radius: 5px; max-width: 600px;">
+                {{ message }}
+            </div>
+        {% elif fail %}
+            <div style="background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; max-width: 600px;">
+                {{ message }}
+            </div>
+        {% endif %}
+        <a href="/view-statistics" class="bottom-link">View Market Statistics</a>
+    </body>
+</html>
