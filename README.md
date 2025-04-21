@@ -1,7 +1,5 @@
-# db1-project
-
 ## Arlington Organic Market Inventory Management System (db1)
-This Flask-based web application provides a simple and intuitive interface to manage the Arlington Organic Market’s vendor inventory, item tracking, and sales statistics. It connects to a MySQL database and allows users to add, update, delete, and view vendors and inventory items, as well as analyze basic market statistics.
+A Flask-based web application that provides a simple and intuitive interface to manage the Arlington Organic Market’s vendor inventory, item tracking, and sales statistics. It connects to a MySQL database and allows users to add, update, delete, and view vendors and inventory items, as well as analyze basic market statistics.
 
 ### Features
 - Add new vendors and items
